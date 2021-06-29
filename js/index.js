@@ -45,9 +45,7 @@ function removeProduct(event) {
 function createProduct() {
   const inputs = document.querySelectorAll('tfoot input');
   const product = inputs[0].value;
-  const price = inputs[1].value.includes('.')
-    ? inputs[1].value
-    : inputs[1].value.concat('.00');
+  const price = Number(inputs[1].value).toFixed(2);
 
   const productElement = document.createElement('tr');
   productElement.classList.add('product');
